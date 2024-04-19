@@ -33,15 +33,6 @@
   line-height: 0.5rem;
 }
 
-.avatar {
-  /* box-sizing: initial; */
-  width: calc(3rem + 12px);
-  height: calc(3rem + 12px);
-  border-radius: 50%;
-  border: 3px solid var(--gray-600);
-  outline: 2px solid var(--blue-200);
-}
-
 .sidebar footer {
   border-top: 1px solid var(--blue-200);
   margin-top: 1.5rem;

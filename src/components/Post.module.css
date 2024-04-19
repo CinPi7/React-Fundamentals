@@ -70,15 +70,6 @@ h2 {
   line-height: 1.6;
 }
 
-.avatar {
-  box-sizing: initial;
-  width: 5rem;
-  height: 5rem;
-  border-radius: 50%;
-  border: 3px solid var(--gray-600);
-  outline: 2px solid var(--blue-200);
-}
-
 .commentForm {
   width: 100%;
   margin-top: 1.5rem;
@@ -113,6 +104,8 @@ h2 {
   color: var(--white);
   font-weight: bold;
   cursor: pointer;
+
+  transition: background-color 01s;
 }
 
 .commentForm button[type="submit"]:hover {
@@ -123,4 +116,16 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  visibility: hidden;
+  max-height: 0;
+}
+
+.commentForm:focus-within .sendButton {
+  visibility: visible;
+  max-height: none;
+}
+
+.commentList {
+  margin-top: 2rem;
 }

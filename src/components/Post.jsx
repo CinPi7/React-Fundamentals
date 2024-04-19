@@ -1,5 +1,7 @@
 import styles from "./Post.module.css";
 import profileImage from "./../assets/49377882.jpeg";
+import { Comment } from "./Comment";
+import { Avatar } from "./Avatar";
 
 export function Post() {
   return (
@@ -7,7 +9,8 @@ export function Post() {
       <article className={styles.post}>
         <header className={styles.header}>
           <div className={styles.author}>
-            <img src={profileImage} className={styles.avatar} />
+            <Avatar src={profileImage} />
+
             <div className={styles.authorInfo}>
               <strong>Cinthia Pissetti</strong>
               <span>Web Developer</span>
@@ -22,7 +25,8 @@ export function Post() {
           <h1>👋 Hello, world!</h1>
           <h2>🤍 About me</h2>
           <p>
-            Im Cinthia, passionate about tech, information, and communication.
+            I&apos;m Cinthia, passionate about tech, information, and
+            communication.
           </p>
 
           <p>
@@ -42,26 +46,26 @@ export function Post() {
           </p>
 
           <p>
-            I’ve had the opportunity to work on projects, either in the health
-            and financial industry, where I could further enhance my experience.
-            My expertise lies in JavaScript, React, Angular, Material Design,
-            and other front-end technologies and frameworks. I also have a solid
-            background in Information and Communication Technologies, with a
-            degree from the Federal University of Santa Catarina and an exchange
-            program in Canada. I have a keen interest in the intersection of
-            psychology, design, and technology, and how they influence human
-            behavior and society.
+            I&apos;ve had the opportunity to work on projects, either in the
+            health and financial industry, where I could further enhance my
+            experience. My expertise lies in JavaScript, React, Angular,
+            Material Design, and other front-end technologies and frameworks. I
+            also have a solid background in Information and Communication
+            Technologies, with a degree from the Federal University of Santa
+            Catarina and an exchange program in Canada. I have a keen interest
+            in the intersection of psychology, design, and technology, and how
+            they influence human behavior and society.
           </p>
 
           <p>
-            🦋 Additionally, I’ve been polishing skills in problem-solving and
-            assertive communication, increasing my understanding and
+            🦋 Additionally, I&apos;ve been polishing skills in problem-solving
+            and assertive communication, increasing my understanding and
             perspectives.
           </p>
 
           <p>
-            🐝 Im passionate about research, collaboration, programming, and
-            creativity!
+            🐝 I&apos;m passionate about research, collaboration, programming,
+            and creativity!
           </p>
 
           <h2> 🛠️ Tech Stacks</h2>
@@ -82,7 +86,7 @@ export function Post() {
 
           <p>
             Interested in a collab? Im available for freelance side projects.
-            Just say <a href="#">olá</a>!.
+            Just say &quot;<a href="#">olá</a>&quot;!.
           </p>
         </div>
 
@@ -92,10 +96,17 @@ export function Post() {
             the form below:
           </strong>
           <textarea placeholder="Leave a comment" />
+
           <div className={styles.sendButton}>
             <button type="submit">Send</button>
           </div>
         </form>
+
+        <div className="commentList">
+          <Comment />
+          <Comment />
+          <Comment />
+        </div>
       </article>
     </div>
   );

@@ -13,6 +13,12 @@
   --blue-800: #040617;
 
   --yellow-200: #f2f2df;
+  --red-500: #ed8096;
+}
+
+:focus {
+  outline: transparent;
+  box-shadow: 0 0 0 2px var(--blue-100);
 }
 
 * {
