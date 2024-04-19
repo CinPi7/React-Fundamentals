@@ -65,11 +65,13 @@ export function Post() {
           </p>
 
           <h2> 🛠️ Tech Stacks</h2>
-          <p>
-            HTML5 CSS3 JavaScript TypeScript React Angular Vue.js SASS Less
-            Styled Components Material-UI jQuery Postgresql Jest Node.js
-            Markdown Python Slack Jira Notion Trello Postman Discord GitHub
-            LinkedIn
+          <p className={styles.bold}>
+            <em>
+              #HTML5 #CSS3 #JavaScript #TypeScript #React #Angular #Vue.js #SASS
+              #Less #StyledComponents #Material-UI #jQuery #Postgresql #Jest
+              #Node.js #Markdown #Python #Slack #Jira #Notion #Trello #Postman
+              #Discord #GitHub #LinkedIn
+            </em>
           </p>
 
           <h2>⭐ Get in touch</h2>
@@ -83,6 +85,17 @@ export function Post() {
             Just say <a href="#">olá</a>!.
           </p>
         </div>
+
+        <form className={styles.commentForm}>
+          <strong>
+            Introduce yourself and leave your request and contact information in
+            the form below:
+          </strong>
+          <textarea placeholder="Leave a comment" />
+          <div className={styles.sendButton}>
+            <button type="submit">Send</button>
+          </div>
+        </form>
       </article>
     </div>
   );
