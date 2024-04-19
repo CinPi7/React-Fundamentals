@@ -1,0 +1,36 @@
+:root {
+  --white: #fff;
+  --gray-100: #e1e1e6;
+  --gray-300: #c4c4cc;
+  --gray-400: #8d8d99;
+  --gray-600: #323238;
+  --gray-700: #29292e;
+  --gray-800: #202024;
+  --gray-900: #121214;
+
+  --blue-200: #8ab7c2;
+  --blue-800: #040617;
+
+  --yellow-200: #f2f2df;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--blue-800);
+  color: var(--gray-300);
+  -webkit-font-smoothing: antialiased; // a fonte fica mais fina!!
+}
+
+body,
+input,
+button,
+textarea {
+  font-family: "Montserrat", "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+} // não herdam do body. rem é medida relativa, melhorando acessibilidade caso configurado em computadores. 1rem é 16px no tamanho padrão. aumentando por igual os elementos caso aumentar ou diminuir fontes na acessibilidade.

@@ -1,0 +1,76 @@
+.sidebar {
+  background: var(--gray-800);
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--blue-200);
+}
+
+.cover {
+  width: 100%;
+  height: 72px;
+  object-fit: cover;
+}
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1rem;
+  gap: 0.5rem;
+  color: var(--yellow-200);
+
+  margin-top: calc(0px - 2.5rem - 6px);
+}
+
+.profile strong {
+  margin-top: 1rem;
+  color: var(--gray-100);
+}
+
+.profile span {
+  font-size: 0.875rem;
+  color: var(--yellow-200);
+  line-height: 0.5rem;
+}
+
+.avatar {
+  /* box-sizing: initial; */
+  width: calc(3rem + 12px);
+  height: calc(3rem + 12px);
+  border-radius: 50%;
+  border: 3px solid var(--gray-600);
+  outline: 2px solid var(--blue-200);
+}
+
+.sidebar footer {
+  border-top: 1px solid var(--blue-200);
+  margin-top: 1.5rem;
+  padding: 1.5rem 2rem 2rem;
+}
+
+.sidebar footer a {
+  width: 100%;
+  bacground: transparent;
+  color: var(--yellow-200);
+  border: 1px solid var(--blue-200);
+  border-radius: 8px;
+  height: 50px;
+  padding: 0.9rem 1.5rem;
+  font-weight: bold;
+  display: block;
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  font-size: 0.8rem;
+
+  transition: color 0.1s, background 0.2s;
+}
+
+.sidebar footer a:hover {
+  background: var(--blue-200);
+  color: var(--white);
+}
