@@ -1,10 +1,12 @@
-import styles from "./Comment.module.css";
-import profileImage from "./../assets/49377882.jpeg";
+import PropTypes from "prop-types";
 
 import { Trash, ThumbsUp } from "@phosphor-icons/react";
 import { Avatar } from "./Avatar";
 
-export function Comment() {
+import styles from "./Comment.module.css";
+import profileImage from "./../assets/49377882.jpeg";
+
+export function Comment({ content }) {
   return (
     <div className={styles.comment}>
       <Avatar hasBorder={false} src={profileImage} />
@@ -26,7 +28,7 @@ export function Comment() {
               <Trash size={24} />
             </button>
           </header>
-          <p>Oiioioii</p>
+          <p>{content}</p>
         </div>
 
         <footer>
@@ -39,3 +41,7 @@ export function Comment() {
     </div>
   );
 }
+
+Comment.propTypes = {
+  content: PropTypes.string,
+};

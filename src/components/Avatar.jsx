@@ -8,11 +8,12 @@ export function Avatar({ hasBorder = true, src }) {
     <img
       className={hasBorder ? styles.avatarWithBorder : styles.avatar}
       src={src}
+      alt="avatar"
     />
   );
 }
 
 Avatar.propTypes = {
   src: PropTypes.string.isRequired,
-  hasBorder: PropTypes.bool.isRequired,
+  hasBorder: PropTypes.bool,
 };
