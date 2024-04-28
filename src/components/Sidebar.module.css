@@ -2,7 +2,7 @@
   background: var(--gray-800);
   border-radius: 8px;
   overflow: hidden;
-  border: 1px solid var(--blue-200);
+  border: 1px solid var(--white);
 }
 
 .cover {

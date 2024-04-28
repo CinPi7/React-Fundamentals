@@ -28,7 +28,7 @@
 }
 
 body {
-  background-color: var(--blue-800);
+  background-color: var(--gray-600);
   color: var(--gray-300);
   -webkit-font-smoothing: antialiased; // a fonte fica mais fina!!
 }
