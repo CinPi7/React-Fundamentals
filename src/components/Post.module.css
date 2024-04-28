@@ -72,9 +72,6 @@ h2 {
 
 .commentForm {
   width: 100%;
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--blue-200);
 }
 
 .commentForm > strong {
@@ -88,7 +85,7 @@ h2 {
   border: 2px solid var(--blue-200);
   border-radius: 8px;
   resize: none;
-  height: 15rem;
+  height: 10rem;
   padding: 1rem;
   line-height: 1.4;
   margin-top: 1rem;
