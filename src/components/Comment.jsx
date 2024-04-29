@@ -6,7 +6,11 @@ import { Avatar } from "./Avatar";
 import styles from "./Comment.module.css";
 import profileImage from "./../assets/49377882.jpeg";
 
-export function Comment({ content }) {
+export function Comment({ content, onDeleteComment }) {
+  function handleDeleteComment() {
+    onDeleteComment(content);
+  }
+
   return (
     <div className={styles.comment}>
       <Avatar hasBorder={false} src={profileImage} />
@@ -24,7 +28,7 @@ export function Comment({ content }) {
               </time>
             </div>
 
-            <button title="Delete Comment">
+            <button title="Delete Comment" onClick={handleDeleteComment}>
               <Trash size={24} />
             </button>
           </header>
@@ -44,4 +48,5 @@ export function Comment({ content }) {
 
 Comment.propTypes = {
   content: PropTypes.string,
+  onDeleteComment: PropTypes.func,
 };
