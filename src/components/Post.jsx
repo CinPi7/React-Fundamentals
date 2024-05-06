@@ -7,6 +7,7 @@ import { Comment } from "./Comment";
 import { Avatar } from "./Avatar";
 
 import styles from "./Post.module.css";
+
 export function Post({ author, content, publishedAt }) {
   const [comments, setComments] = useState(["Oii, deixe seu comentário!"]);
   const [newCommentText, setNewCommentText] = useState("");
@@ -23,20 +24,31 @@ export function Post({ author, content, publishedAt }) {
     addSuffix: true,
   });
 
-  function handleCreateNewComment() {
+  function handleCreateNewComment(event) {
     event.preventDefault();
+
+    console.log(event, "event");
 
     setComments([...comments, newCommentText]);
     setNewCommentText("");
   }
 
-  function handleNewCommentChange() {
+  function handleNewCommentChange(event) {
+    event.target.setCustomValidity("");
     setNewCommentText(event.target.value);
   }
 
-  function deleteComment(commentToDelete) {
+  function handleEmptyFieldsMessage(event) {
+    if (!newCommentText.trim()) {
+      event.target.setCustomValidity(
+        "Por favor, insira sua mensagem. Please, enter your comment."
+      );
+    }
+  }
+
+  function deleteComment(commentIndexToDelete) {
     const listWithoutSelectedComment = comments.filter((comment) => {
-      return comment !== commentToDelete;
+      return comment !== commentIndexToDelete;
     });
 
     setComments(listWithoutSelectedComment);
@@ -94,6 +106,8 @@ export function Post({ author, content, publishedAt }) {
             name="comment"
             value={newCommentText}
             onChange={handleNewCommentChange}
+            onInvalid={handleEmptyFieldsMessage}
+            required
           />
           <div className={styles.sendButton}>
             <button type="submit">Send</button>

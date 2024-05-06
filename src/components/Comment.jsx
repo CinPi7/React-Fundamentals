@@ -5,8 +5,11 @@ import { Avatar } from "./Avatar";
 
 import styles from "./Comment.module.css";
 import profileImage from "./../assets/49377882.jpeg";
+import { useState } from "react";
 
 export function Comment({ content, onDeleteComment }) {
+  const [likeCount, setLikeCount] = useState(0);
+
   function handleDeleteComment() {
     onDeleteComment(content);
   }
@@ -36,9 +39,9 @@ export function Comment({ content, onDeleteComment }) {
         </div>
 
         <footer>
-          <button>
+          <button onClick={() => setLikeCount(likeCount + 1)}>
             <ThumbsUp />
-            Gostar <span>20</span>
+            Gostar <span>{likeCount}</span>
           </button>
         </footer>
       </div>

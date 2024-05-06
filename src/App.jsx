@@ -77,7 +77,7 @@ const posts = [
       { type: "first-title", content: "👋 Hello, world!" },
       {
         type: "paragraph",
-        content: "Have a nive day!",
+        content: "Have a nive day! Leave a motivational writing.",
       },
     ],
     publishedAt: new Date("2024-04-04 20:00:00"),
