@@ -1,14 +1,31 @@
 import { format, formatDistanceToNow } from "date-fns";
 import ptBR from "date-fns/locale/pt-BR";
 import PropTypes from "prop-types";
-import { useState } from "react";
+import { ChangeEvent, FormEvent, InvalidEvent, useState } from "react";
 
 import { Comment } from "./Comment";
 import { Avatar } from "./Avatar";
 
 import styles from "./Post.module.css";
 
-export function Post({ author, content, publishedAt }) {
+interface Author {
+  avatarURL: string;
+  name: string;
+  role: string;
+}
+
+interface Content {
+  type: "first-title" | "second-title" | "paragraph";
+  content: string;
+}
+
+interface PostProps {
+  author: Author;
+  content: Content;
+  publishedAt: Date;
+}
+
+export function Post({ author, content, publishedAt }: PostProps) {
   const [comments, setComments] = useState(["Oii, deixe seu comentário!"]);
   const [newCommentText, setNewCommentText] = useState("");
 
@@ -24,7 +41,7 @@ export function Post({ author, content, publishedAt }) {
     addSuffix: true,
   });
 
-  function handleCreateNewComment(event) {
+  function handleCreateNewComment(event: FormEvent) {
     event.preventDefault();
 
     console.log(event, "event");
@@ -33,12 +50,12 @@ export function Post({ author, content, publishedAt }) {
     setNewCommentText("");
   }
 
-  function handleNewCommentChange(event) {
+  function handleNewCommentChange(event: ChangeEvent<HTMLTextAreaElement>) {
     event.target.setCustomValidity("");
     setNewCommentText(event.target.value);
   }
 
-  function handleEmptyFieldsMessage(event) {
+  function handleEmptyFieldsMessage(event: InvalidEvent<HTMLTextAreaElement>) {
     if (!newCommentText.trim()) {
       event.target.setCustomValidity(
         "Por favor, insira sua mensagem. Please, enter your comment."
@@ -46,7 +63,7 @@ export function Post({ author, content, publishedAt }) {
     }
   }
 
-  function deleteComment(commentIndexToDelete) {
+  function deleteComment(commentIndexToDelete: string) {
     const listWithoutSelectedComment = comments.filter((comment) => {
       return comment !== commentIndexToDelete;
     });

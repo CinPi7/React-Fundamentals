@@ -25,10 +25,10 @@ importers:
         version: 9.0.1
     devDependencies:
       '@types/react':
-        specifier: ^18.2.66
+        specifier: ^18.2.79
         version: 18.2.79
       '@types/react-dom':
-        specifier: ^18.2.22
+        specifier: ^18.2.25
         version: 18.2.25
       '@vitejs/plugin-react':
         specifier: ^4.2.1
